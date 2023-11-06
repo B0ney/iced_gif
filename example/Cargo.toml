@@ -5,9 +5,9 @@ edition = "2021"
 authors = ["tarkah <admin@tarkah.dev>"]
 
 [features]
-default = ["iced_gif/default"]
+default = ["iced_gif/default", "tokio"]
 tokio = ["iced_gif/tokio", "iced/tokio"]
 
 [dependencies]
 iced_gif = { path = "../", default-features = false }
-iced = { version = "0.10", features = [ "image" ] }
+iced = { git = "https://github.com/iced-rs/iced.git", features = [ "image" ] }
