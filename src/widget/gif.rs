@@ -11,6 +11,7 @@ use iced_widget::core::{
     event, layout, renderer, window, Clipboard, ContentFit, Element, Event, Layout, Length,
     Rectangle, Shell, Size, Vector, Widget,
 };
+use iced_widget::image::FilterMethod;
 use iced_widget::runtime::Command;
 use image_rs::codecs::gif;
 use image_rs::{AnimationDecoder, ImageDecoder};
@@ -307,7 +308,7 @@ where
                     ..bounds
                 };
 
-                renderer.draw(state.current.frame.handle.clone(), drawing_bounds + offset)
+                renderer.draw(state.current.frame.handle.clone(), FilterMethod::Linear, drawing_bounds + offset)
             };
 
             if adjusted_fit.width > bounds.width || adjusted_fit.height > bounds.height {
