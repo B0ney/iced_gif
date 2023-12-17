@@ -10,7 +10,7 @@ use iced_gif::widget::gif;
 fn main() {
     let settings = Settings {
         window: window::Settings {
-            size: (498, 164),
+            size: [498.0, 164.0].into(),
             ..Default::default()
         },
         ..Default::default()
