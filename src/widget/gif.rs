@@ -189,12 +189,8 @@ impl<'a, Message, Renderer> Widget<Message, Renderer> for Gif<'a>
 where
     Renderer: image::Renderer<Handle = Handle>,
 {
-    fn width(&self) -> Length {
-        self.width
-    }
-
-    fn height(&self) -> Length {
-        self.height
+    fn size(&self) -> Size<Length> { 
+        Size::new(self.width, self.height)
     }
 
     fn tag(&self) -> tree::Tag {
