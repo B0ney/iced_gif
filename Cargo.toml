@@ -8,21 +8,16 @@ license = "MIT"
 repository = "https://github.com/tarkah/iced_gif"
 
 [workspace]
-default-members = [
-  "./example"
-]
-members = [
-  ".",
-  "./example",
-]
+default-members = ["./example"]
+members = [".", "./example"]
 
 [features]
 default = ["tokio"]
 tokio = ["dep:tokio"]
 
 [dependencies]
-iced_widget = { git = "https://github.com/iced-rs/iced.git",  features = ["image"] }
-iced_futures = { git = "https://github.com/iced-rs/iced.git" }
+iced_widget = { version = "0.12.0", features = ["image"] }
+iced_futures = { version = "0.12.0" }
 thiserror = "1.0"
 
 [dependencies.async-fs]
