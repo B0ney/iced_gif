@@ -1,10 +1,8 @@
 use std::path::PathBuf;
 
 use iced::widget::{container, row};
-use iced::{
-    application, color, executor, theme, window, Application, Command, Element, Length, Settings,
-    Theme,
-};
+use iced::Renderer;
+use iced::{advanced::Application, executor, window, Command, Element, Length, Settings, Theme};
 use iced_gif::widget::gif;
 
 fn main() {
@@ -34,6 +32,7 @@ impl Application for App {
     type Message = Message;
     type Theme = Theme;
     type Flags = ();
+    type Renderer = Renderer;
 
     fn new(_flags: Self::Flags) -> (Self, Command<Message>) {
         let path = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../assets/rust-lang-ferris.gif");
@@ -46,10 +45,6 @@ impl Application for App {
 
     fn title(&self) -> String {
         "Iced Gif".into()
-    }
-
-    fn style(&self) -> theme::Application {
-        theme::Application::Custom(Box::new(Style))
     }
 
     fn update(&mut self, message: Message) -> Command<Message> {
@@ -70,19 +65,6 @@ impl Application for App {
                 .into()
         } else {
             row![].into()
-        }
-    }
-}
-
-pub struct Style;
-
-impl application::StyleSheet for Style {
-    type Style = Theme;
-
-    fn appearance(&self, style: &Self::Style) -> application::Appearance {
-        application::Appearance {
-            background_color: color!(0xFCFEFC),
-            text_color: style.palette().text,
         }
     }
 }

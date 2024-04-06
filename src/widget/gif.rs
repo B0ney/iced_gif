@@ -286,7 +286,7 @@ where
         //
         // TODO: export iced_native::widget::image::draw as standalone function
         {
-            let Size { width, height } = renderer.dimensions(&state.current.frame.handle);
+            let Size { width, height } = renderer.measure_image(&state.current.frame.handle);
             let image_size = Size::new(width as f32, height as f32);
 
             let bounds = layout.bounds();
@@ -304,7 +304,7 @@ where
                     ..bounds
                 };
 
-                renderer.draw(
+                renderer.draw_image(
                     state.current.frame.handle.clone(),
                     FilterMethod::Linear,
                     drawing_bounds + offset,
