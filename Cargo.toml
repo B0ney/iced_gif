@@ -40,5 +40,5 @@ version = "0.25"
 features = ["gif"]
 
 [patch.crates-io]
-iced_widget = { git = "https://github.com/iced-rs/iced.git", rev = "e867f44" }
-iced_futures = { git = "https://github.com/iced-rs/iced.git", rev = "e867f44" }
+iced_widget = { git = "https://github.com/iced-rs/iced.git" }
+iced_futures = { git = "https://github.com/iced-rs/iced.git" }
